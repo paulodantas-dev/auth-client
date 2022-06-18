@@ -16,7 +16,12 @@ export const postRegister = async (data: IRegister): Promise<AxiosResponse<IResp
   return response;
 };
 
-export const postToken = async (token: string): Promise<AxiosResponse<IResponse>> => {
-  const response = await api.post('/api/refresh_token', { token });
+export const postLogout = async (): Promise<AxiosResponse<IResponse>> => {
+  const response = await api.post('/api/register');
   return response;
+};
+
+export const postToken = async (): Promise<AxiosResponse<IResponse>> => {
+  const response = await api.post('/api/refresh_token');
+  return response.data;
 };

@@ -14,15 +14,16 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   useEffect(() => {
     const fetchUser = async () => {
       setIsLoading(true);
-      const token = localStorage.getItem('token');
-      if (token) {
-        await postToken(token)
+      const login = localStorage.getItem('isFirstLogin');
+      if (login) {
+        await postToken()
           .then((res) => {
+            console.log(res);
             setUser(res.data.user);
             setToken(res.data.access_token);
           })
           .catch((error) => {
-            setError(error.message);
+            setError(error.response.data.error);
           })
           .finally(() => {
             setIsLoading(false);
@@ -40,9 +41,9 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     setIsLoading(true);
     await postLogin(data)
       .then((res) => {
-        localStorage.setItem('token', res.data.access_token);
         setUser(res.data.user);
         setToken(res.data.access_token);
+        localStorage.setItem('isFirstLogin', 'false');
       })
       .catch((error) => {
         setError(error.response.data.error);
@@ -57,9 +58,9 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     setIsLoading(true);
     await postRegister(data)
       .then((res) => {
-        localStorage.setItem('token', res.data.access_token);
         setUser(res.data.user);
         setToken(res.data.access_token);
+        localStorage.setItem('isFirstLogin', 'false');
       })
       .catch((error) => {
         setError(error.response.data.error);
@@ -70,13 +71,21 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       });
   }, []);
 
-  const logout = useCallback(() => {
+  const logout = useCallback(async () => {
     setIsLoading(true);
-    localStorage.removeItem('token');
-    setUser(null);
-    setToken(null);
-    setIsLoading(false);
-    setInitialLoading(false);
+    await postToken()
+      .then(() => {
+        setUser(null);
+        setToken(null);
+        localStorage.removeItem('isFirstLogin');
+      })
+      .catch((error) => {
+        setError(error.response.data.error);
+      })
+      .finally(() => {
+        setIsLoading(false);
+        setInitialLoading(false);
+      });
   }, []);
 
   const memoedValue = useMemo(
