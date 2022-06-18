@@ -3,7 +3,7 @@ import axios, { AxiosResponse } from 'axios';
 import { ILogin, IRegister, IResponse } from '../hooks/useAuth/types';
 
 export const api = axios.create({
-  baseURL: 'http://localhost:5000',
+  baseURL: 'https://auth-app-node.herokuapp.com',
 });
 
 export const postLogin = async (data: ILogin): Promise<AxiosResponse<IResponse>> => {
