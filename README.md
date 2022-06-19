@@ -159,6 +159,25 @@ How to use my own hook
 
 ![App Screenshot1](https://github.com/paulodantas-dev/auth-client/blob/main/src/assets/1.png)
 
+![App Screenshot2](https://github.com/paulodantas-dev/auth-client/blob/main/src/assets/2.png)
+
+![App Screenshot3](https://github.com/paulodantas-dev/auth-client/blob/main/src/assets/3.png)
+
+![App Screenshot4](https://github.com/paulodantas-dev/auth-client/blob/main/src/assets/4.png)
+
+![App Screenshot5](https://github.com/paulodantas-dev/auth-client/blob/main/src/assets/5.png)
+
+![App Screenshot6](https://github.com/paulodantas-dev/auth-client/blob/main/src/assets/6.png)
+
+![App Screenshot7](https://github.com/paulodantas-dev/auth-client/blob/main/src/assets/7.png)
+![App Screenshot8](https://github.com/paulodantas-dev/auth-client/blob/main/src/assets/8.png)
+
+![App Screenshot9](https://github.com/paulodantas-dev/auth-client/blob/main/src/assets/9.png)
+
+![App Screenshot10](https://github.com/paulodantas-dev/auth-client/blob/main/src/assets/10.png)
+![App Screenshot11](https://github.com/paulodantas-dev/auth-client/blob/main/src/assets/11.png)
+![App Screenshot12](https://github.com/paulodantas-dev/auth-client/blob/main/src/assets/12.png)
+
 
 
 ## Feedback
