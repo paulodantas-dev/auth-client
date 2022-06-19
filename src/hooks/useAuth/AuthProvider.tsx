@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState, useCallback } from 'react';
 
-import { postLogin, postRegister, postToken } from '../../service/api';
+import { postLogin, postLogout, postRegister, postToken } from '../../service/api';
 import { AuthContext } from './AuthContext';
 import { AuthProviderProps, ILogin, IRegister, IUser } from './types';
 
@@ -73,7 +73,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
   const logout = useCallback(async () => {
     setIsLoading(true);
-    await postToken()
+    await postLogout()
       .then(() => {
         setUser(null);
         setToken(null);

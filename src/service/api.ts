@@ -4,6 +4,10 @@ import { ILogin, IRegister, IResponse } from '../hooks/useAuth/types';
 
 export const api = axios.create({
   baseURL: 'https://auth-app-node.herokuapp.com',
+  withCredentials: true,
+  headers: {
+    'Content-Type': 'application/json',
+  },
 });
 
 export const postLogin = async (data: ILogin): Promise<AxiosResponse<IResponse>> => {
@@ -17,7 +21,7 @@ export const postRegister = async (data: IRegister): Promise<AxiosResponse<IResp
 };
 
 export const postLogout = async (): Promise<AxiosResponse<IResponse>> => {
-  const response = await api.post('/api/register');
+  const response = await api.post('/api/logout');
   return response;
 };
 

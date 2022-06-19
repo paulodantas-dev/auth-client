@@ -4,7 +4,6 @@
   "description": "Social media app for instant posts",
   "author": "Paulo Dantas <paulodantasbjr@gmail.com>",
   "license": "MIT",
-  "proxy": "http://localhost:5000",
   "homepage": "https://github.com/paulodantasrj",
   "scripts": {
     "dev": "vite",

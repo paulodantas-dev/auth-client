@@ -1,11 +1,21 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
-import { Home } from '../Home';
-import { HomeView } from '../HomeView';
+import useAuth from '../../../hooks/useAuth';
+import Home from '../Home';
 
 describe('Home', () => {
+  beforeEach(() => {
+    (useAuth as jest.Mock).mockImplementation(() => ({
+      user: {
+        id: '1',
+        name: 'John Doe',
+      },
+      isLoading: false,
+      logout: jest.fn(),
+    }));
+  });
   it('should render correctly', () => {
     render(<Home />);
-    expect(HomeView).toBeDefined();
+    expect(screen.getByText('John Doe')).toBeInTheDocument();
   });
 });
