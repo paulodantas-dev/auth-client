@@ -1,6 +1,8 @@
-# auth-server-api
+# auth-client-app
 
 APP - building
+
+API - https://auth-app-node.herokuapp.com
 
 ## 🛠 Skills
 
@@ -150,7 +152,12 @@ How to use my own hook
 ```
 
 ## Demo
-![app](https://imgflip.com/gif/6k7q1s)
+![app](https://github.com/paulodantas-dev/auth-client/blob/main/src/assets/app.gif)
+
+
+## Screenshots
+
+![App Screenshot1](https://github.com/paulodantas-dev/auth-client/blob/main/src/assets/1.png)
 
 
 
