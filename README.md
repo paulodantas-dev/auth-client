@@ -149,6 +149,8 @@ How to use my own hook
   if (!user) return <Navigate to="/login" />;
 ```
 
+## Demo
+![app](https://imgflip.com/gif/6k7q1s)
 
 
 
