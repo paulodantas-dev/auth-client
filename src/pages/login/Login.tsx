@@ -14,6 +14,8 @@ import { LoginView } from './LoginView';
 const Login = (): JSX.Element => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
+  const [isForgotPassword, setIsForgotPassword] = useState(false);
+
   const { isLoading, signIn, error, user } = useAuth();
 
   const schema = yup.object().shape({
@@ -28,6 +30,10 @@ const Login = (): JSX.Element => {
   } = useForm<FormDataLogin>({
     resolver: yupResolver(schema),
   });
+
+  const onChangeIsForgotPassword = () => {
+    setIsForgotPassword(!isForgotPassword);
+  };
 
   const onChangeIsPasswordVisible = () => {
     setIsPasswordVisible(!isPasswordVisible);
@@ -54,6 +60,8 @@ const Login = (): JSX.Element => {
       formErrors={errors}
       isLoading={isLoading}
       error={error}
+      onChangeIsForgotPassword={onChangeIsForgotPassword}
+      isForgotPassword={isForgotPassword}
     />
   );
 };

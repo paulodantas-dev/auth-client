@@ -5,6 +5,10 @@ export interface FormDataLogin {
   password: string;
 }
 
+export interface FormDataForgotPassword {
+  email: string;
+}
+
 export interface LoginProps {
   onChangeIsPasswordVisible: () => void;
   isPasswordVisible: boolean;
@@ -14,4 +18,6 @@ export interface LoginProps {
   formErrors: FieldErrors<FormDataLogin>;
   isLoading: boolean;
   error: string | null;
+  isForgotPassword: boolean;
+  onChangeIsForgotPassword: () => void;
 }

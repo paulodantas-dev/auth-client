@@ -23,6 +23,11 @@ const Register = (): JSX.Element => {
       .min(4, 'Name must be at least 4 characters long')
       .max(50, 'Name must be less than 50 characters long')
       .required('Name is required'),
+    username: yup
+      .string()
+      .min(2, 'User name must be at least 4 characters long')
+      .max(16, 'User name must be less than 50 characters long')
+      .required('User name is required'),
     email: yup.string().email('Email is invalid').required('Email is required'),
     password: yup
       .string()
