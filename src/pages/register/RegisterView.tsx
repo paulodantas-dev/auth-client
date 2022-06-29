@@ -1,4 +1,3 @@
-import { AiOutlineLoading } from 'react-icons/ai';
 import { FaEye, FaEyeSlash, FaLock } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
@@ -13,8 +12,6 @@ export const RegisterView = ({
   handleSubmit,
   onSubmit,
   formErrors,
-  isLoading,
-  error,
 }: RegisterProps): JSX.Element => {
   return (
     <div className="w-screen h-screen flex items-center justify-center bg-slate-900">
@@ -137,15 +134,15 @@ export const RegisterView = ({
               <span className="absolute left-0 inset-y-0 flex items-center pl-3">
                 <FaLock className="h-5 w-5 text-slate-800 group-hover:text-slate-700" />
               </span>
-              {isLoading ? <AiOutlineLoading className="h-5 w-5 animate-spin" /> : 'Sign Up'}
+              Sign Up
             </button>
           </div>
         </form>
-        {error && (
+        {/* {error && (
           <div className="flex items-center justify-center mt-6">
             <span className="text-rose-500  text-xs italic">{error}</span>
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );

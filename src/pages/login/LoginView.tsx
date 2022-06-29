@@ -1,8 +1,6 @@
-import { AiOutlineLoading } from 'react-icons/ai';
 import { FaEye, FaEyeSlash, FaLock } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-import { Modal } from '../../components/ModalForgotPassword/Modal';
 import { LoginProps } from './Login.types';
 
 export const LoginView = ({
@@ -12,10 +10,6 @@ export const LoginView = ({
   handleSubmit,
   onSubmit,
   register,
-  isLoading,
-  error,
-  isForgotPassword,
-  onChangeIsForgotPassword,
 }: LoginProps): JSX.Element => {
   return (
     <>
@@ -77,10 +71,7 @@ export const LoginView = ({
               >
                 Sign Up for free
               </Link>
-              <button
-                onClick={onChangeIsForgotPassword}
-                className="font-light text-lg md:text-sm text-lime-200 hover:text-lime-800"
-              >
+              <button className="font-light text-lg md:text-sm text-lime-200 hover:text-lime-800">
                 Forgot your password?
               </button>
             </div>
@@ -93,24 +84,17 @@ export const LoginView = ({
                 <span className="absolute left-0 inset-y-0 flex items-center pl-3">
                   <FaLock className="h-5 w-5 text-slate-800 group-hover:text-slate-700" />
                 </span>
-                {isLoading ? <AiOutlineLoading className="h-5 w-5 animate-spin" /> : 'Sign in'}
+                Sign in
               </button>
             </div>
           </form>
-          {error && (
+          {/* {error && (
             <div className="flex items-center justify-center mt-6">
               <span className="text-rose-500  text-xs italic">{error}</span>
             </div>
-          )}
+          )} */}
         </div>
       </div>
-      {isForgotPassword && (
-        <Modal
-          onChangeIsForgotPassword={onChangeIsForgotPassword}
-          error={error}
-          isLoading={isLoading}
-        />
-      )}
     </>
   );
 };

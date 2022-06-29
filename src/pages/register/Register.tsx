@@ -1,21 +1,17 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Navigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 import * as yup from 'yup';
 
 import { yupResolver } from '@hookform/resolvers/yup';
 
-import useAuth from '../../hooks/useAuth';
 import { FormDataRegister } from './Register.types';
 import { RegisterView } from './RegisterView';
 
 const Register = (): JSX.Element => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [ispasswordConfirmationVisible, setIsPasswordConfirmationVisible] = useState(false);
-
-  const { isLoading, signUp, error, user } = useAuth();
 
   const schema = yup.object().shape({
     fullname: yup
@@ -59,14 +55,12 @@ const Register = (): JSX.Element => {
 
   const onSubmit = async (formRegister: FormDataRegister) => {
     try {
-      await signUp(formRegister);
+      console.log(formRegister);
+      // TODO: call API to register user
     } catch (error) {
-      console.log(error);
-      toast.error('Something went wrong');
+      toast.error(`Something went wrong with ${error}`);
     }
   };
-
-  if (user) return <Navigate to="/" />;
 
   return (
     <RegisterView
@@ -78,8 +72,6 @@ const Register = (): JSX.Element => {
       handleSubmit={handleSubmit}
       onSubmit={onSubmit}
       formErrors={errors}
-      isLoading={isLoading}
-      error={error}
     />
   );
 };

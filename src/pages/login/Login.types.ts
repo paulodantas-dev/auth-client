@@ -16,8 +16,6 @@ export interface LoginProps {
   handleSubmit: UseFormHandleSubmit<FormDataLogin>;
   onSubmit: (data: FormDataLogin) => void;
   formErrors: FieldErrors<FormDataLogin>;
-  isLoading: boolean;
-  error: string | null;
-  isForgotPassword: boolean;
-  onChangeIsForgotPassword: () => void;
+  // isLoading: boolean;
+  // error: string | null;
 }

@@ -17,6 +17,4 @@ export interface RegisterProps {
   handleSubmit: UseFormHandleSubmit<FormDataRegister>;
   onSubmit: (data: FormDataRegister) => void;
   formErrors: FieldErrors<FormDataRegister>;
-  isLoading: boolean;
-  error: string | null;
 }

@@ -19,8 +19,6 @@ Feel free to take a look at my latest projects on my [portifolio page](https://p
 
 **CSS:** tailwindcss
 
-**tests:** jest + react-testing-library
-
 **Global-State** ContextAPI
 
 
@@ -88,9 +86,6 @@ To deploy this project, run
 - [yup](https://github.com/jquense/yup)
 - [tailwindcss](https://tailwindcss.com/)
 - [typescript](https://www.typescriptlang.org/)
-- [jest](https://jestjs.io/)
-- [testing-library](https://testing-library.com/)
-
 ## Functionalities
 
 - Full Responsive
