@@ -6,7 +6,7 @@ API - https://auth-app-node.herokuapp.com
 
 ## 🛠 Skills
 
-Javascript, ReactJS, react-router-dom, ContextApi, HOC, Private Route, Hook, react-hook-form, yup, axios
+Javascript, ReactJS, react-router-dom, Redux, HOC, Private Route, Hook, react-hook-form, yup, axios
 
 ## 🚀 About Me
 
@@ -19,8 +19,7 @@ Feel free to take a look at my latest projects on my [portifolio page](https://p
 
 **CSS:** tailwindcss
 
-**Global-State** ContextAPI
-
+**Global-State** Redux Toolkit
 
 ## Installation / Execute
 
@@ -33,39 +32,11 @@ How to install and execute the project in LOCALHOST
     yarn prepare / npm run prepare
     yarn dev / npm run dev
 ```
-## Execute Tests
-
-How to execute tests the project in LOCALHOST
-
-### To execute one test
-
-```bash
-    yarn test <nameFile>.test.tsx / npm run test <nameFile>.test.tsx
-```
-
-### To execute all tests
-
-```bash
-    yarn test / npm run test
-```
-### To execute one coverage
-
-```bash
-    yarn coverage <nameFile>.test.tsx / npm run coverage <nameFile>.test.tsx
-```
-
-### To execute all coverage
-
-```bash
-    yarn coverage / npm run coverage
-```
-
 ## Environment Variables
 
 To run this project, you will need to add the following environment variables to your .env
 
 `NODE_ENV`
-
 
 ## Deploy
 
@@ -86,6 +57,9 @@ To deploy this project, run
 - [yup](https://github.com/jquense/yup)
 - [tailwindcss](https://tailwindcss.com/)
 - [typescript](https://www.typescriptlang.org/)
+- [@reduxjs/toolkit](https://redux-toolkit.js.org/)
+
+
 ## Functionalities
 
 - Full Responsive
@@ -100,10 +74,10 @@ To deploy this project, run
 Value of AuthContext Provider
 
 ```javascript
- const memoedValue = useMemo(
-    () => ({ user, token, signUp, signIn, error, isLoading, logout }),
-    [user, token, signUp, signIn, error, isLoading, logout]
-  );
+const memoedValue = useMemo(
+  () => ({ user, token, signUp, signIn, error, isLoading, logout }),
+  [user, token, signUp, signIn, error, isLoading, logout]
+);
 ```
 
 Create my own hook
@@ -139,16 +113,16 @@ export const RequireAuth = (): JSX.Element => {
 How to use my own hook
 
 ```javascript
- const { user, isLoading, logout } = useAuth();
+const { user, isLoading, logout } = useAuth();
 
-  if (isLoading) return <Loader />;
+if (isLoading) return <Loader />;
 
-  if (!user) return <Navigate to="/login" />;
+if (!user) return <Navigate to="/login" />;
 ```
 
 ## Demo
-![app](https://github.com/paulodantas-dev/auth-client/blob/main/src/assets/app.gif)
 
+![app](https://github.com/paulodantas-dev/auth-client/blob/main/src/assets/app.gif)
 
 ## Screenshots
 
@@ -164,8 +138,6 @@ How to use my own hook
 ![App Screenshot10](https://github.com/paulodantas-dev/auth-client/blob/main/src/assets/10.png)
 ![App Screenshot11](https://github.com/paulodantas-dev/auth-client/blob/main/src/assets/11.png)
 ![App Screenshot12](https://github.com/paulodantas-dev/auth-client/blob/main/src/assets/12.png)
-
-
 
 ## Feedback
 
